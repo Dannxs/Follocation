@@ -13,13 +13,6 @@
       <%= link_to 'Mon tableau de bord', "#", class: "dropdown-item", id: "logout" %>
       <%= link_to 'Se déconnecter', destroy_user_session_path, class: "dropdown-item", id: "logout", method: :delete %>
     </div>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to 'Se connecter', new_user_session_path%>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Creer un compte', new_user_registration_path%>
-      </li>
     <% end %>
   </div>
 </div>
