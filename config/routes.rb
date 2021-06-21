@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :rentals, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :renters, only: [:new, :create, :show, :edit, :update, :destroy]
   get '/dashboard', to: 'pages#dashboard'
+  get '/add', to: 'pages#add'
 end

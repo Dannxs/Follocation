@@ -1,19 +1,37 @@
 <div class="">
   <br>
   <h1 class="text-center title-home">Follocation</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <%= image_tag "logo.png", class:"rounded mx-auto d-block"%>
+  <% if user_signed_in? %>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= image_tag "logo.png", class:"rounded mx-auto d-block"%>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-6 d-flex justify-content-center">
+          <%= link_to 'Dashboard', dashboard_path, class:"btn btn-primary btn-home-connexion" %>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <%= link_to "Nouvel Ajout", add_path, class:"btn btn-primary btn-home-connexion" %>
+        </div>
+      </div> 
     </div>
-    <div class="row">
-      <div class="col-6 d-flex justify-content-center">
-        <%= link_to 'Se connecter', new_user_session_path, class:"btn btn-primary btn-home-connexion" %>
+  <% else %>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= image_tag "logo.png", class:"rounded mx-auto d-block"%>
+        </div>
       </div>
-      <div class="col-6 d-flex justify-content-center">
-        <%= link_to "S'inscrire", new_user_registration_path, class:"btn btn-primary btn-home-connexion" %>
-      </div>
-    </div> 
-  </div>
+      <div class="row">
+        <div class="col-6 d-flex justify-content-center">
+          <%= link_to 'Se connecter', new_user_session_path, class:"btn btn-primary btn-home-connexion" %>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <%= link_to "S'inscrire", new_user_registration_path, class:"btn btn-primary btn-home-connexion" %>
+        </div>
+      </div> 
+    </div>
+  <% end %>
 </div>
