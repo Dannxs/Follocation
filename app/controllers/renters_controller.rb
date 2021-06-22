@@ -1,6 +1,10 @@
 class RentersController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
+  def index
+    @renter = Renter.all
+  end
+
   def show
     @renter = Renter.find(params[:id])
     authorize @renter

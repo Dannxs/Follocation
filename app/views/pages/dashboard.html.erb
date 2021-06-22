@@ -1,0 +1,23 @@
+<h1 class="d-flex justify-content-center">Mon Dashboard</h1>
+<br>
+<br>
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <%= link_to 'Mes Locataires', all_renter_path, class:"btn btn-primary btn-home-connexion" %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <%= link_to "Mes Batiments", index_rental_path, class:"btn btn-primary btn-home-connexion" %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <%= link_to "Retour", :back, class:"btn btn-primary btn-home-connexion" %>
+      </div>
+    </div>
+  </div>
