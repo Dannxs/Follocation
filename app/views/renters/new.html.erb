@@ -1,12 +1,13 @@
 <div class="container">
   <%= simple_form_for(@renter) do |f| %>
-    <%= f.select :gender, options_for_select(["M.", "Mme", "Mlle"]), :class => 'genForm_dropBox' %>
+    <%= f.select :mister, options_for_select(["M.", "Mme", "Mlle"]), :class => 'genForm_dropBox' %>
     <br>
     <br>
     <%= f.input :first_name, label: false, placeholder: "Prénom" ,class:"id_renter" %>
     <%= f.input :last_name, label: false, placeholder: "Nom" ,class:"id_rental" %>
     <%= f.input :mail, label: false, placeholder: "Email" ,class:"id_rental" %>
     <%= f.input :phone_number, label: false, placeholder: "phone_number" ,class:"id_rental" %>
+    <%= f.input :rental_id %>
     <%= f.submit 'Création', class: "btn btn-primary" %>
   <% end %>
 </div>

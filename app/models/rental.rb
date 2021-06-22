@@ -3,5 +3,5 @@ require 'open-uri'
 
 class Rental < ApplicationRecord
   belongs_to :user
-  has_many :rentals
+  has_many :renters
 end
