@@ -2,7 +2,7 @@ class RentalsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def index
-    @rental = Rental.all
+    @rentals = Rental.all
   end
 
   def show

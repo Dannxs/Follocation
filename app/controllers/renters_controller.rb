@@ -2,7 +2,7 @@ class RentersController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
   def index
-    @renter = Renter.all
+    @renters = Renter.all
   end
 
   def show
@@ -27,7 +27,7 @@ class RentersController < ApplicationController
     @renter.user = current_user
     authorize @renter
       if @renter.save
-        redirect_to renter_path(@renter)
+        redirect_to dashboard_path
       else
         render "renters/new"
       end
