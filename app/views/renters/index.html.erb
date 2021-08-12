@@ -1,10 +1,11 @@
 <h1>Mes Locataires</h1>
 
-<ul>
-  <%= @renters.each do |renter| %>
-  <li> 
-    <% name = renter.first_name + renter.last_name %>
-    <%= link_to name, "renters/#{renter.id}" %>
-  </li>
-  <% end %>
-</ul>
+
+<% @renters.each do |renter| %>
+  <ul>
+    <li> 
+      <% name = renter.first_name + " " + renter.last_name %>
+      <%= link_to name, "renters/#{renter.id}" %>
+    </li>
+  </ul>
+<% end %>
