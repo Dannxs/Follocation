@@ -1,8 +1,10 @@
 <div class="container">
-  <%= simple_form_for(@rental) do |f| %>
+  <%= simple_form_for(@building) do |f| %>
     <%= f.input :address, label: false, placeholder: "Adresse" ,class:"address_rental" %>
     <%= f.input :city, label: false, placeholder: "Ville" ,class:"address_rental" %>
     <%= f.input :postal_code, label: false, placeholder: "Code postal" ,class:"address_rental" %>
-    <%= f.submit 'Création', class: "btn btn-primary" %>
+    
+    <%= f.input :construction_year, label: false, placeholder: "Année de construction" ,class:"address_rental" %>
+    <%= f.submit 'Création du batiment', class: "btn btn-primary" %>
   <% end %>
 </div>
