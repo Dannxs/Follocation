@@ -30,9 +30,9 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     authorize @rental
       if @rental.save
-        redirect_to rental_path(@rental)
+        redirect_to "/buildings/#{params[:building_id]}/rentals/#{params[:id]}"
       else
-        render "rentals/new"
+        render "/buildings/#{params[:building_id]}/rentals/new"
       end
   end
 
@@ -59,6 +59,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:description, :area, :nb_piece, :price_rent)
+    params.require(:rental).permit(:description, :area, :nb_piece, :price_rent, :type_of_home)
   end
 end

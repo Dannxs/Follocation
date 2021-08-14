@@ -6,7 +6,7 @@
     <% if a.exclude?(building.address) %>
       <li>
       <% a << building.address %>
-      <%= link_to building.address, "building/#{building.id}" %>
+      <%= link_to building.address, building_path(building) %>
       </li>
     <% end %>
   </ul>
