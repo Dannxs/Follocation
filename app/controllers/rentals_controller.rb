@@ -6,7 +6,6 @@ class RentalsController < ApplicationController
   end
 
   def show
-    @rentals = Rental.all
     @rental = Rental.find(params[:id])
     authorize @rental
   end
@@ -57,6 +56,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:address, :city, :postal_code, :description, :construction_year, :area, :nb_piece, :price_rent)
+    params.require(:rental).permit(:description, :area, :nb_piece, :price_rent)
   end
 end
