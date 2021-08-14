@@ -11,7 +11,8 @@ class RentalsController < ApplicationController
   end
 
   def new
-    @rental = Rental.new(params[:id])
+    @building = Building.find(params[:building_id])
+    @rental = Rental.new
     authorize @rental
   end
 
@@ -24,6 +25,8 @@ class RentalsController < ApplicationController
 
   def create
     @rental = Rental.new(rental_params)
+    @building = Building.find(params[:building_id])
+    @rental.building = @building
     @rental.user = current_user
     authorize @rental
       if @rental.save
@@ -47,7 +50,7 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     authorize @rental
     if @rental.save!
-      redirect_to rental_path(@rental)
+      redirect_to building_path(@building)
     else
       render :edit
     end
