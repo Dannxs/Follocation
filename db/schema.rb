@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_160542) do
+ActiveRecord::Schema.define(version: 2021_08_14_164207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 2021_08_14_160542) do
     t.string "construction_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "rental_id", null: false
-    t.index ["rental_id"], name: "index_buildings_on_rental_id"
   end
 
   create_table "rentals", force: :cascade do |t|
@@ -36,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_08_14_160542) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "building_id"
+    t.index ["building_id"], name: "index_rentals_on_building_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_160542) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "buildings", "rentals"
+  add_foreign_key "rentals", "buildings"
   add_foreign_key "rentals", "users"
   add_foreign_key "renters", "rentals"
   add_foreign_key "renters", "users"

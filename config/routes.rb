@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :rentals
   resources :renters
-  resources :renters
+  resources :buildings
   get '/dashboard', to: 'pages#dashboard'
   get '/add', to: 'pages#add'
 end

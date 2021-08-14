@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for(@rental) do |f| %>
+    <%= f.input :address, label: false, placeholder: "Adresse" ,class:"address_rental" %>
+    <%= f.input :city, label: false, placeholder: "Ville" ,class:"address_rental" %>
+    <%= f.input :postal_code, label: false, placeholder: "Code postal" ,class:"address_rental" %>
+    <%= f.submit 'Création', class: "btn btn-primary" %>
+  <% end %>
+</div>

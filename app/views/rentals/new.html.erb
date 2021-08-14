@@ -1,9 +1,5 @@
 <div class="container">
   <%= simple_form_for(@rental) do |f| %>
-    <%= f.input :address, label: false, placeholder: "Adresse" ,class:"address_rental" %>
-    <%= f.input :city, label: false, placeholder: "Ville" ,class:"address_rental" %>
-    <%= f.input :postal_code, label: false, placeholder: "Code postal" ,class:"address_rental" %>
-    <%= f.input :construction_year, label: false, placeholder: "Date de construction" ,class:"address_rental" %>
     <%= f.input :area, label: false, placeholder: "Aire au m²" ,class:"address_rental" %>
     <%= f.input :nb_piece, label: false, placeholder: "Nombre de pièces" ,class:"address_rental" %>
     <%= f.input :price_rent, label: false, placeholder: "Prix du loyer" ,class:"address_rental" %>

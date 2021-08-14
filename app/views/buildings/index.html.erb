@@ -1,0 +1,13 @@
+<h1>Mes Batiments</h1>
+
+<% a = [] %>
+<% @buildings.each do |building| %>
+  <ul>
+    <% if a.exclude?(building.address) %>
+      <li>
+      <% a << building.address %>
+      <%= link_to building.address, "building/#{building.id}" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
