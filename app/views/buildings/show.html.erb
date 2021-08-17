@@ -3,3 +3,9 @@
     <%= link_to 'Ajouter location', "#{params[:id]}/rentals/new", class:"btn btn-primary btn-home-connexion" %>
   </div>
 </div>
+<div class="row">
+  <% @rentals.each do |f| %>
+    <%= f.type_of_home + " - " + f.area + " - " + f.nb_piece + "pièce(s) - " + f.price_rent + "€" %>
+  <% end %>
+  
+</div>

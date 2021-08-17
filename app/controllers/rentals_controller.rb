@@ -1,10 +1,6 @@
 class RentalsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
 
-  def index
-    @rentals = Rental.all
-  end
-
   def show
     @rental = Rental.find(params[:id])
     authorize @rental
@@ -30,7 +26,7 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     authorize @rental
       if @rental.save
-        redirect_to "/buildings/#{params[:building_id]}/rentals/#{params[:id]}"
+        redirect_to "/buildings/#{params[:building_id]}"
       else
         render "/buildings/#{params[:building_id]}/rentals/new"
       end
