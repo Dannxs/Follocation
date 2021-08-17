@@ -3,9 +3,16 @@
     <%= link_to 'Ajouter location', "#{params[:id]}/rentals/new", class:"btn btn-primary btn-home-connexion" %>
   </div>
 </div>
+<br>
+<br>
+
 <div class="row">
-  <% @rentals.each do |f| %>
-    <%= f.type_of_home + " - " + f.area + " - " + f.nb_piece + "pièce(s) - " + f.price_rent + "€" %>
-  <% end %>
-  
+  <ul>
+    <% @building.rentals.each do |f| %>
+      <li>
+        <%= link_to "#{f.type_of_home} de #{f.area} m² / #{f.nb_piece}  pièce(s) - #{f.price_rent} €", "/buildings/#{f.building_id}/rentals/#{f.id}" %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
 </div>

@@ -7,7 +7,6 @@ class BuildingsController < ApplicationController
 
   def show
     @building = Building.find(params[:id])
-    @rentals = Rental.all
     authorize @building
   end
 
