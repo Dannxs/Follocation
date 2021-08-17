@@ -1,8 +1,9 @@
 class RentalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :new
+  skip_before_action :authenticate_user!, only: [:new, :edit]
 
   def show
     @rental = Rental.find(params[:id])
+    @building = Building.find(params[:building_id])
     authorize @rental
   end
 
@@ -16,7 +17,7 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
     authorize @rental
     @rental.destroy
-    redirect_to new_rental_path
+    redirect_to "/buildings/#{@rental.building_id}"
   end
 
   def create
@@ -46,7 +47,7 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     authorize @rental
     if @rental.save!
-      redirect_to building_path(@building)
+      redirect_to "/buildings/#{params[:building_id]}/rentals/#{params[:id]}"
     else
       render :edit
     end

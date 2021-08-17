@@ -1,6 +1,12 @@
+<h1 class="text-center">Mes Locations</h1>
+<br>
+<h3 class="text-center"><%= @building.address %></h3>
 <div class="row">
   <div class="col d-flex justify-content-center">
-    <%= link_to 'Ajouter location', "#{params[:id]}/rentals/new", class:"btn btn-primary btn-home-connexion" %>
+    <%= link_to 'Ajouter', "#{params[:id]}/rentals/new", class:"btn btn-primary btn-home-connexion" %>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <%= link_to "Retour", :back, class:"btn btn-primary btn-home-connexion text-center" %>
   </div>
 </div>
 <br>
